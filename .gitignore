@@ -1,0 +1,10 @@
+# .NET build
+backend/Api/bin/
+backend/Api/obj/
+
+# Node & Angular build
+frontend/contacts-app/node_modules/
+frontend/contacts-app/dist/
+
+# Angular cache
+frontend/contacts-app/.angular/cache/
