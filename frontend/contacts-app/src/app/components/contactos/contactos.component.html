@@ -1,0 +1,49 @@
+<div style="max-width: 700px; margin: 20px auto;">
+
+  <h2 style="text-align: center;">Gestión de Contactos</h2>
+
+  <input
+    type="text"
+    placeholder="Buscar contacto..."
+    (input)="buscar($event)"
+    style="margin-bottom: 10px; padding: 6px; width: 100%; box-sizing: border-box;"
+  >
+
+  <ul>
+    <li *ngFor="let c of contactos" style="margin-bottom: 6px;">
+      <strong>{{ c.nombre }}</strong> — {{ c.telefono }}
+      <button
+        (click)="eliminar(c.id)"
+        style="margin-left: 10px; background: red; color: white; border: none; padding: 3px 8px; cursor: pointer;"
+      >
+        Eliminar
+      </button>
+    </li>
+  </ul>
+
+  <h3 style="margin-top: 20px;">Agregar Contacto</h3>
+
+  <div style="display: flex; flex-direction: column; max-width: 300px;">
+    <label>Nombre:</label>
+    <input
+      [(ngModel)]="nuevo.nombre"
+      placeholder="Nombre"
+      style="margin-bottom: 8px; padding: 6px;"
+    >
+
+    <label>Teléfono:</label>
+    <input
+      [(ngModel)]="nuevo.telefono"
+      placeholder="Teléfono"
+      style="margin-bottom: 8px; padding: 6px;"
+    >
+
+    <button
+      (click)="agregar()"
+      style="background: blue; color: white; border: none; padding: 8px; cursor: pointer;"
+    >
+      Agregar
+    </button>
+  </div>
+
+</div>
